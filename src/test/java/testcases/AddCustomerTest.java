@@ -26,9 +26,9 @@ public class AddCustomerTest extends TestBase {
         Alert alert = wait.until(ExpectedConditions.alertIsPresent());
         String alerttext = "Customer added successfully with customer";
         Assert.assertTrue(alert.getText().contains(alerttext));
-        Thread.sleep(3000);
+        
         alert.accept();
-        Thread.sleep(3000);
+        
 
 
     }

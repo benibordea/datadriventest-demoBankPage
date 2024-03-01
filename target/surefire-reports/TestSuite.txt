@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.699 s - in TestSuite
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 5.828 s <<< FAILURE! - in TestSuite
+testcases.BankManagerLoginTest.loginAsBankManager  Time elapsed: 0.753 s  <<< FAILURE!
+java.lang.AssertionError: test the listeners
+	at testcases.BankManagerLoginTest.loginAsBankManager(BankManagerLoginTest.java:18)
+
