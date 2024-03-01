@@ -1,4 +1,4 @@
-15:54:24,591 DEBUG devpinoyLogger:53 - Config file loaded !!!
-15:54:24,594 DEBUG devpinoyLogger:57 - OR file loaded !!!
-15:54:26,606 DEBUG devpinoyLogger:67 - Chrome launched !!!
-15:54:29,171 DEBUG devpinoyLogger:94 - Test execution completed
+17:35:59,813 DEBUG devpinoyLogger:54 - Config file loaded !!!
+17:35:59,816 DEBUG devpinoyLogger:58 - OR file loaded !!!
+17:36:01,449 DEBUG devpinoyLogger:68 - Chrome launched !!!
+17:36:10,409 DEBUG devpinoyLogger:96 - Test execution completed

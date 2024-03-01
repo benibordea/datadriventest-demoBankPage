@@ -2,7 +2,11 @@ package testcases;
 
 import java.util.Hashtable;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -11,7 +15,7 @@ import base.TestBase;
 public class AddCustomerTest extends TestBase {
 
 @Test(dataProvider="getData")
-    public void addCustomer (String firstName, String lastName, String postCode){
+    public void addCustomer (String firstName, String lastName, String postCode) throws InterruptedException{
 
         driver.findElement(By.cssSelector(OR.getProperty("addCustBtn"))).click();
         driver.findElement(By.cssSelector(OR.getProperty("firstname"))).sendKeys(firstName);
@@ -19,9 +23,17 @@ public class AddCustomerTest extends TestBase {
         driver.findElement(By.cssSelector(OR.getProperty("postcode"))).sendKeys(postCode);
         driver.findElement(By.cssSelector(OR.getProperty("subAddBtn"))).click();
 
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        String alerttext = "Customer added successfully with customer";
+        Assert.assertTrue(alert.getText().contains(alerttext));
+        Thread.sleep(3000);
+        alert.accept();
+        Thread.sleep(3000);
+
+
     }
 
-
+//////////////////////////////////////////////
     @DataProvider
     public Object[][] getData(){
 

@@ -3,6 +3,7 @@ package base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -74,7 +75,7 @@ public class TestBase {
         driver.get(config.getProperty("testsiteurl"));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("implicit.wait")), TimeUnit.SECONDS);
-        wait = new WebDriverWait(driver, 5);
+        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
     public boolean isElementPresent (By by){
@@ -90,7 +91,7 @@ public class TestBase {
     public void testDown() {
 
         if(driver!=null){
-       // driver.quit();
+       driver.quit();
     }
     log.debug("Test execution completed");
 }
