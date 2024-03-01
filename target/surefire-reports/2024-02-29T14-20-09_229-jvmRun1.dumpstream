@@ -1,0 +1,4 @@
+# Created at 2024-02-29T14:20:10.773
+
+An error occurred while instantiating class testcases.BankManagerLoginTest: Class org.openxmlformats.schemas.drawingml.x2006.main.ThemeDocument does not have member field 'org.apache.xmlbeans.impl.schema.DocumentFactory Factory'
+

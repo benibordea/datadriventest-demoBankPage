@@ -1,0 +1,4 @@
+testcases\BankManagerLoginTest.class
+base\TestBase.class
+rough\TestProperties.class
+testcases\AddCustomerTest.class
