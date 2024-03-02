@@ -37,7 +37,7 @@ public class TestBase {
     public static Properties OR = new Properties();
     public static FileInputStream fis;
     private static final Logger log = Logger.getLogger("devpinoyLogger");
-    public static ExcelReader excel = new ExcelReader(System.getProperty("user.dir") + "\\src\\resources\\excel\\testdata.xlsx");
+    public static ExcelReader excel = new ExcelReader(System.getProperty("user.dir") + "\\src\\main\\resources\\excel\\testdata.xlsx");
     public static WebDriverWait wait;
 
 
@@ -46,14 +46,14 @@ public class TestBase {
     @BeforeSuite
     public void setUp() throws FileNotFoundException,IOException {
 
-        PropertyConfigurator.configure("D:\\JavaProjects\\datadriven\\src\\main\\resources\\log4j.properties");
+        PropertyConfigurator.configure(System.getProperty("user.dir") + "\\src\\main\\resources\\properties\\log4j.properties");
         
         if(driver==null){
-            FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\resources\\properties\\Config.properties");
+            FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\resources\\properties\\Config.properties");
             config.load(fis);
             log.debug("Config file loaded !!!");
 
-            fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\resources\\properties\\OR.properties");
+            fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\resources\\properties\\OR.properties");
             OR.load(fis);
             log.debug("OR file loaded !!!");
         }

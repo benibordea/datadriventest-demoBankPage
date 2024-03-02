@@ -9,6 +9,7 @@ public class CustomListeners implements ITestListener{
     @Override
     public void onTestFailure(ITestResult result) {
 
+        System.setProperty("org.uncommons.reportng.escape-output","false"); //to open the screenshot link in the report
         Reporter.log("Capturing a screenshot");
         Reporter.log("<a target=\'_blank' href='C:/Users/Beni/Downloads/1676889880009.jpg'>Screenshot</a>");//target=\'_blank' is to open the link in another window
 
