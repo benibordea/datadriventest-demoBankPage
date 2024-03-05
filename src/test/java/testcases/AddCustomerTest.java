@@ -20,6 +20,8 @@ public class AddCustomerTest extends TestBase {
         driver.findElement(By.cssSelector(OR.getProperty("addCustBtn"))).click();
         driver.findElement(By.cssSelector(OR.getProperty("firstname"))).sendKeys(firstName);
         driver.findElement(By.cssSelector(OR.getProperty("lastname"))).sendKeys(lastName);
+        Assert.fail("somereason");
+        Thread.sleep(3000);
         driver.findElement(By.cssSelector(OR.getProperty("postcode"))).sendKeys(postCode);
         driver.findElement(By.cssSelector(OR.getProperty("subAddBtn"))).click();
 
@@ -28,6 +30,7 @@ public class AddCustomerTest extends TestBase {
         Assert.assertTrue(alert.getText().contains(alerttext));
         
         alert.accept();
+       
         
         
 

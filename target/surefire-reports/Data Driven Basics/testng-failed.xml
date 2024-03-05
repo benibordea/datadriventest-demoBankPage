@@ -17,4 +17,15 @@
       </class> <!-- testcases.BankManagerLoginTest -->
     </classes>
   </test> <!-- Manager Login Test(failed) -->
+  <test thread-count="5" name="Add Customer Test(failed)" verbose="0">
+    <classes>
+      <class name="testcases.AddCustomerTest">
+        <methods>
+          <include name="addCustomer" invocation-numbers="0"/>
+          <include name="setUp"/>
+          <include name="testDown"/>
+        </methods>
+      </class> <!-- testcases.AddCustomerTest -->
+    </classes>
+  </test> <!-- Add Customer Test(failed) -->
 </suite> <!-- Failed suite [Data Driven Basics] -->

@@ -1,4 +1,8 @@
-testcases\BankManagerLoginTest.class
 base\TestBase.class
-rough\TestProperties.class
+utilities\ExtentManager.class
 testcases\AddCustomerTest.class
+testcases\BankManagerLoginTest.class
+listeners\CustomListeners.class
+utilities\ExcelReader.class
+rough\TestProperties.class
+utilities\TestUtil.class
