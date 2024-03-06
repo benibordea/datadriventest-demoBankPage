@@ -16,14 +16,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
-
 import utilities.ExcelReader;
-import utilities.ExtentManager;
 
 public class TestBase {
 
@@ -43,9 +41,8 @@ public class TestBase {
     private static final Logger log = Logger.getLogger("devpinoyLogger");
     public static ExcelReader excel = new ExcelReader(System.getProperty("user.dir") + "\\src\\main\\resources\\excel\\testdata.xlsx");
     public static WebDriverWait wait;
-    public ExtentReports rep = ExtentManager.getInstance();
-    public static ExtentTest test;
-
+        protected static ExtentReports extent;
+        protected static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
     
     @SuppressWarnings("deprecation")
     @BeforeSuite
@@ -81,7 +78,11 @@ public class TestBase {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("implicit.wait")), TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+
+        extent = new ExtentReports(System.getProperty("user.dir") + "/target/surefire-reports/html/ExtentReport.html", true); //D:\JavaProjects\datadriven\target\surefire-reports\html\
+        System.out.println(System.getProperty("user.dir") + "/target/surefire-reports/html/ExtentReport.html");
     }
+    
 
     public boolean isElementPresent (By by){
         try {
@@ -94,10 +95,18 @@ public class TestBase {
 
     @AfterSuite
     public void testDown() {
-
+        
         if(driver!=null){
        driver.quit();
+       extent.flush();
+        extent.close();
     }
     log.debug("Test execution completed");
 }
+
+    @AfterMethod
+    public void AfterMethod(){
+        extent.endTest(test.get());
+    }
 }
+

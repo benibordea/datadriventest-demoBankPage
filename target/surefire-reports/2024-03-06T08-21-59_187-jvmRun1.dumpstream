@@ -1,0 +1,3 @@
+# Created at 2024-03-06T08:22:05.591
+class java.lang.ThreadLocal cannot be cast to class com.relevantcodes.extentreports.IExtentTestClass (java.lang.ThreadLocal is in module java.base of loader 'bootstrap'; com.relevantcodes.extentreports.IExtentTestClass is in unnamed module of loader 'app')
+

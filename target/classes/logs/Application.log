@@ -1,4 +1,14 @@
-12:14:50,450 DEBUG devpinoyLogger:59 - Config file loaded !!!
-12:14:50,452 DEBUG devpinoyLogger:63 - OR file loaded !!!
-12:14:52,105 DEBUG devpinoyLogger:73 - Chrome launched !!!
-12:14:54,935 DEBUG devpinoyLogger:101 - Test execution completed
+10:58:00,450 DEBUG devpinoyLogger:56 - Config file loaded !!!
+10:58:00,454 DEBUG devpinoyLogger:60 - OR file loaded !!!
+10:58:02,173 DEBUG devpinoyLogger:70 - Chrome launched !!!
+10:58:05,108 DEBUG freemarker.cache:45 - Couldn't find template in cache for "Extent.ftl"("en_GB", UTF-8, parsed); will try to load it.
+10:58:05,110 DEBUG freemarker.cache:45 - TemplateLoader.findTemplateSource("Extent_en_GB.ftl"): Not found
+10:58:05,112 DEBUG freemarker.cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+10:58:05,113 DEBUG freemarker.cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+10:58:05,114 DEBUG freemarker.cache:45 - Loading template for "Extent.ftl"("en_GB", UTF-8, parsed) from "jar:file:/C:/Users/Beni/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+10:58:05,296 DEBUG freemarker.cache:45 - Couldn't find template in cache for "Extent.ftl"("en_GB", UTF-8, parsed); will try to load it.
+10:58:05,296 DEBUG freemarker.cache:45 - TemplateLoader.findTemplateSource("Extent_en_GB.ftl"): Not found
+10:58:05,297 DEBUG freemarker.cache:45 - TemplateLoader.findTemplateSource("Extent_en.ftl"): Not found
+10:58:05,297 DEBUG freemarker.cache:45 - TemplateLoader.findTemplateSource("Extent.ftl"): Found
+10:58:05,297 DEBUG freemarker.cache:45 - Loading template for "Extent.ftl"("en_GB", UTF-8, parsed) from "jar:file:/C:/Users/Beni/.m2/repository/com/relevantcodes/extentreports/2.41.2/extentreports-2.41.2.jar!/com/relevantcodes/extentreports/view/Extent.ftl"
+10:58:05,341 DEBUG devpinoyLogger:104 - Test execution completed

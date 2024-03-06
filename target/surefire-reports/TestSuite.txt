@@ -1,12 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 5.834 s <<< FAILURE! - in TestSuite
-testcases.BankManagerLoginTest.loginAsBankManager  Time elapsed: 0.841 s  <<< FAILURE!
-java.lang.AssertionError: test the listeners
-	at testcases.BankManagerLoginTest.loginAsBankManager(BankManagerLoginTest.java:18)
-
-testcases.AddCustomerTest.addCustomer  Time elapsed: 0.748 s  <<< FAILURE!
-java.lang.AssertionError: somereason
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 6.238 s <<< FAILURE! - in TestSuite
+testcases.AddCustomerTest.addCustomer  Time elapsed: 0.791 s  <<< FAILURE!
+java.lang.AssertionError: reason
 	at testcases.AddCustomerTest.addCustomer(AddCustomerTest.java:23)
 

@@ -1,40 +1,61 @@
 package listeners;
 
 import java.io.IOException;
-
-import org.apache.velocity.test.misc.Test;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import org.testng.ISuite;
+import org.testng.ISuiteListener;
+import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
-import utilities.TestUtil;
+
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.IExtentTestClass;
+import com.relevantcodes.extentreports.LogStatus;
 import base.TestBase;
 import utilities.TestUtil;
 
+public class CustomListeners extends TestBase implements ITestListener,ISuiteListener {
 
-public class CustomListeners implements ITestListener{
+	public 	String messageBody;
+	public void onTestFailure(ITestResult arg0) {
 
-    @Override
-    public void onTestFailure(ITestResult result) {
+		System.setProperty("org.uncommons.reportng.escape-output","false");
+		try {
+			TestUtil.captureScreenshot();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		test.get().log(LogStatus.FAIL, "Test failed");
 
-        System.setProperty("org.uncommons.reportng.escape-output","false"); //to open the screenshot link in the report
-        Reporter.log("Capturing a screenshot");
-        try {
-            TestUtil.captureScreenshot();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        Reporter.log("Click to see Screenshot");
+		String screenshotPath = ("user.dir") + "\\target\\surefire-reports\\html\\" + TestUtil.screenshotName; // Update this with the path to your screenshot
+        TestBase.test.get().log(LogStatus.FAIL, "Snapshot below: " + TestBase.test.get().addScreenCapture(TestUtil.screenshotName));
+
+
+		Reporter.log("Click to see Screenshot");
 		Reporter.log("<a target=\"_blank\" href="+TestUtil.screenshotName+">Screenshot</a>");
 		Reporter.log("<br>");
 		Reporter.log("<br>");
 		Reporter.log("<a target=\"_blank\" href="+TestUtil.screenshotName+"><img src="+TestUtil.screenshotName+" height=200 width=200></img></a>");
-        ITestListener.super.onTestFailure(result);
+
+		
+	}
+
+	
+
+
+	@Override
+    public void onTestStart(ITestResult result) {
+        test.set(extent.startTest(result.getMethod().getMethodName()));
     }
 
-    @Override
+	@Override
     public void onTestSuccess(ITestResult result) {
-        // TODO Auto-generated method stub
-        ITestListener.super.onTestSuccess(result);
+        test.get().log(LogStatus.PASS, "Test passed");
     }
-
+	
 }
+
+

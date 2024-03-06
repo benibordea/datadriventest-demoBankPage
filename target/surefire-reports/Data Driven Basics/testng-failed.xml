@@ -6,21 +6,11 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="listeners.CustomListeners"/>
   </listeners>
-  <test thread-count="5" name="Manager Login Test(failed)" verbose="0">
-    <classes>
-      <class name="testcases.BankManagerLoginTest">
-        <methods>
-          <include name="setUp"/>
-          <include name="testDown"/>
-          <include name="loginAsBankManager"/>
-        </methods>
-      </class> <!-- testcases.BankManagerLoginTest -->
-    </classes>
-  </test> <!-- Manager Login Test(failed) -->
   <test thread-count="5" name="Add Customer Test(failed)" verbose="0">
     <classes>
       <class name="testcases.AddCustomerTest">
         <methods>
+          <include name="AfterMethod"/>
           <include name="addCustomer" invocation-numbers="0"/>
           <include name="setUp"/>
           <include name="testDown"/>

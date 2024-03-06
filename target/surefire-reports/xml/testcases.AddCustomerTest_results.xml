@@ -4,13 +4,13 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="0.435">
+           time="0.429">
   <properties />
-            <testcase name="addCustomer" time="0.435" classname="testcases.AddCustomerTest">
+            <testcase name="addCustomer" time="0.429" classname="testcases.AddCustomerTest">
                 <failure type="java.lang.AssertionError"
-                  message="somereason"
+                  message="reason"
               >
-<![CDATA[java.lang.AssertionError: somereason
+<![CDATA[java.lang.AssertionError: reason
   org.testng.Assert.fail(Assert.java:111)
   testcases.AddCustomerTest.addCustomer(AddCustomerTest.java:23)
   java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
